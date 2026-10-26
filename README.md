@@ -13,9 +13,16 @@ A real, single-business trade-counter and warehouse picking application. Built w
 
 ## Local development
 
+> **Setting this up for the first time (including `git clone`/`git pull`,
+> PostgreSQL, and a Docker-only option that needs no Node/PostgreSQL
+> install)? Follow [`SETUP.md`](SETUP.md) end to end.** There is no hosted
+> preview — you run your own copy locally/on your LAN. The summary below is
+> for developers who already have PostgreSQL running.
+
 Prerequisites: Node.js 22+, npm, PostgreSQL 15+.
 
-1. Install dependencies: `npm ci`.
+1. Install dependencies: `npm ci` (older checkouts without a
+   `package-lock.json`: run `npm install` once instead).
 2. Copy `.env.example` to `.env` and configure `DATABASE_URL`.
 3. On a **new, empty database**, run `npx drizzle-kit migrate`. The committed SQL migration is in `drizzle/`.
 4. Run `npm run dev` and open `http://localhost:3000`.
